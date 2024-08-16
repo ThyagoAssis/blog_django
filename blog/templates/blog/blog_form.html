@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="row mt-3">
+    <div class="col-8 rounded float-left">
+        <img  src="https://cdn.pixabay.com/photo/2017/06/10/07/18/list-2389219_960_720.png" alt="" class="img-fluid">
+    </div>
+    <div class="col-6 rounded float-right">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-dark">Enviar</button>
+        </form>
+    </div>
+   
+</div>
+
+{% endblock %}
