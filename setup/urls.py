@@ -1,28 +1,15 @@
-"""
-URL configuration for setup project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
-from blog.views import BlogCreateView, BlogDeleteView, BlogListView, BlogUpdateView
+from blog.views import BlogCreateView, BlogDeleteView, BlogListView, BlogUpdateView, SolicitarDadosView, EncerrarSessaoView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', BlogListView.as_view(), name="blog_list"),
+    path('listar/', BlogListView.as_view(), name="blog_list"),
     path('create/', BlogCreateView.as_view(), name="blog_create"),
-    path('update/<int:pk>', BlogListView.as_view(), name="blog_list"),
-    path('create/<int:pk>', BlogCreateView.as_view(), name="blog_create"),
+    path('update/<int:pk>', BlogUpdateView.as_view(), name="blog_update"),
+    path('create/<int:pk>', BlogDeleteView.as_view(), name="blog_delete"),
 
+    #Section
+    path("", SolicitarDadosView.as_view(), name='blog_section'),
+    path("encerra_sessao", EncerrarSessaoView.as_view(), name='blog_section_fim')
 ]
