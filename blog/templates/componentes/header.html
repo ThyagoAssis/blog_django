@@ -4,7 +4,7 @@
             <div class="col-10">
                 <a class="navbar-brand" href="{% url 'blog_list' %}">Blog Django</a>
             </div>
-            <div class="col-2 text-light ">
+            <div class="col-2 text-light mt-3">
             {% if request.session.nome_usuario %}
                 <p>Olá, {{ request.session.nome_usuario }}! <a href="{% url 'blog_section_fim' %}">Sair</a></p>           
             {% endif %}

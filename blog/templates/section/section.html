@@ -4,21 +4,20 @@
 
 <div class="row justify-content-sm-center mt-5 ">
 
-    <div class="col-5 shadow rounded">
-        <h1 class="text-center mt-4 display-6">Identifique-se</h1>
+    <div class="col-5 rounded">
+        <h1 class="text-center mt-4 mb-5 display-6">Identifique-se</h1>
 
     
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
-            <label for="nome_usuario">Nome de Usuário:</label>
-            <input type="text" class="form-control" id="nome_usuario" name="nome_usuario" required><br><br>
-            <label for="email">E-mail:</label>
-            <input type="email" class="form-control" id="email" name="email" required><br><br>
-        </div>
-        
+            <!-- <label for="nome_usuario">Nome de Usuário:</label> -->
+            <input type="text" placeholder="Nome"  class="form-control" id="nome_usuario" name="nome_usuario" required><br><br>
+            <!-- <label for="email">E-mail:</label> -->
+            <input type="email" placeholder="email@email.com.br" class="form-control" id="email" name="email" required><br><br>
+        </div>       
        
-        <button type="submit" class="btn btn-dark btn-sm btn-block justify-content-sm-center">Enviar</button>
+        <button type="submit" class="btn btn-dark btn-sm btn-block justify-content-sm-center .bt">Enviar</button>
     </form>
 
     </div>
