@@ -66,9 +66,11 @@ class BlogDeleteView(DeleteView):
 
 ##Capturando sessões
 class SolicitarDadosView(View):
+
     def get(self, request):
         return render(request, 'section/section.html')
 
+    
     def post(self, request):
         nome_usuario = request.POST.get('nome_usuario')
         email = request.POST.get('email')

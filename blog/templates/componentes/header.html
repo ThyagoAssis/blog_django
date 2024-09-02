@@ -1,4 +1,5 @@
 <header>
+    <!--- Navbar 01-->
     <nav class="navbar navbar-dark">
         <div class="container">
             <div class="col-10">
@@ -6,13 +7,13 @@
             </div>
             <div class="col-2 text-light mt-3">
             {% if request.session.nome_usuario %}
-                <p>Olá, {{ request.session.nome_usuario }}! <a href="{% url 'blog_section_fim' %}">Sair</a></p>           
+                <p>Olá, {{ request.session.nome_usuario }}! <a href="{% url 'blog_section_fim' %}" class="text-info ms-3">Sair</a></p>           
             {% endif %}
-            </div>
-            
-        </div>
-       
+            </div>            
+        </div>       
     </nav>  
+
+    <!--- Navbar 02-->
     {% if request.session.nome_usuario %}
     <nav class="navbar navbar-expand-lg navbar-dark nav-1 shadow">
         <div class="container">                
@@ -30,21 +31,8 @@
         </div>
       </nav>
       {% else %}
-      <nav class="navbar navbar-expand-lg navbar-dark nav-1 shadow">
-        <div class="container">                
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-sm-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blog_list' %}">Postagens</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blog_create' %}">Cadastrar</a>     
-            </ul> -->
-        </div>
-      </nav>
+      <!---Barra vazia -->
+      <nav class="navbar navbar-expand-lg navbar-dark nav-1 shadow"></nav>
       {% endif %}
 
 </header>

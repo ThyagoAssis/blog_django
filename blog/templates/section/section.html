@@ -8,7 +8,7 @@
         <h1 class="text-center mt-4 mb-5 display-6">Identifique-se</h1>
 
     
-    <form method="post">
+    <form method="post" class="justify-content-sm-center .bt">
         {% csrf_token %}
         <div class="form-group">
             <!-- <label for="nome_usuario">Nome de Usuário:</label> -->
@@ -17,7 +17,7 @@
             <input type="email" placeholder="email@email.com.br" class="form-control" id="email" name="email" required><br><br>
         </div>       
        
-        <button type="submit" class="btn btn-dark btn-sm btn-block justify-content-sm-center .bt">Enviar</button>
+        <button type="submit" class="btn text-light" >Enviar</button>
     </form>
 
     </div>
