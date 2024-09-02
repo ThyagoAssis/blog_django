@@ -11,20 +11,55 @@ from django.http import HttpResponse
 class BlogListView(ListView):
     model = Blog
 
+    def get(self, request, *args, **kwargs):
+        # Verifica se a sessão tem 'nome_usuario'
+        if 'nome_usuario' not in request.session:
+            return redirect('blog_section')  # Redireciona para a página de login se a sessão não estiver ativa
+        
+        # Se a sessão estiver ativa, continue com a lógica padrão da ListView
+        return super().get(request, *args, **kwargs)
+
 class BlogCreateView(CreateView):
     model = Blog
+        
+    def get(self, request, *args, **kwargs):
+        # Verifica se a sessão tem 'nome_usuario'
+        if 'nome_usuario' not in request.session:
+            return redirect('blog_section')  # Redireciona para a página de login se a sessão não estiver ativa
+        
+        # Se a sessão estiver ativa, continue com a lógica padrão da ListView
+        return super().get(request, *args, **kwargs)
+    
     fields = ["titulo", "conteudo"]
     success_url = reverse_lazy('blog_list')
 
 
 class BlogUpdateView(UpdateView):
     model = Blog
+
+    def get(self, request, *args, **kwargs):
+        # Verifica se a sessão tem 'nome_usuario'
+        if 'nome_usuario' not in request.session:
+            return redirect('blog_section')  # Redireciona para a página de login se a sessão não estiver ativa
+        
+        # Se a sessão estiver ativa, continue com a lógica padrão da ListView
+        return super().get(request, *args, **kwargs)
+
     fields = ["titulo", "conteudo"]
     success_url = reverse_lazy('blog_list')
     
 
 class BlogDeleteView(DeleteView):
     model = Blog
+
+    def get(self, request, *args, **kwargs):
+        # Verifica se a sessão tem 'nome_usuario'
+        if 'nome_usuario' not in request.session:
+            return redirect('blog_section')  # Redireciona para a página de login se a sessão não estiver ativa
+        
+        # Se a sessão estiver ativa, continue com a lógica padrão da ListView
+        return super().get(request, *args, **kwargs)
+        
     template_name = 'blog/blog_delete.html'
     success_url = reverse_lazy('blog_list')
 

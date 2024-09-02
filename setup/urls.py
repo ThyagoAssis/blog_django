@@ -7,7 +7,7 @@ urlpatterns = [
     path('listar/', BlogListView.as_view(), name="blog_list"),
     path('create/', BlogCreateView.as_view(), name="blog_create"),
     path('update/<int:pk>', BlogUpdateView.as_view(), name="blog_update"),
-    path('create/<int:pk>', BlogDeleteView.as_view(), name="blog_delete"),
+    path('delete/<int:pk>', BlogDeleteView.as_view(), name="blog_delete"),
 
     #Section
     path("", SolicitarDadosView.as_view(), name='blog_section'),
